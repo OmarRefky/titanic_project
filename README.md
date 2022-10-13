@@ -4,7 +4,8 @@
 * Engineered 2 new features by extracting name titles from name strings and combining 2 numerical features into a categorical one.
 * Optimized 7 different classifiers using gridsearch then deployed an Ensemble model using a voting classifier on their results.
 * Achieved 83.51% test accuracy on the voting classifier.
-![Ensamble Model](https://i.imgur.com/x2GZbhc.png "final_model")
+
+![image](https://user-images.githubusercontent.com/88734429/195572865-68fc7276-12eb-47b9-9e03-c14ea04389c1.png)
 
 
 ## **Code and resources used**
@@ -208,4 +209,4 @@
    - Tuned the voting classfier using gridsearch to optimize all of its possible parameters.
    - Obtained overall final accuracy of **83.51% +/- 3.041%**
 
-![Ensamble Model](https://i.imgur.com/x2GZbhc.png "final_model")
+![image](https://user-images.githubusercontent.com/88734429/195572899-cd991f16-b8b4-4c45-bcf4-6603c186652c.png)
