@@ -1,5 +1,4 @@
 # **Chances of surviving the Titanic!**
----------------------------
 * Built a machine learning model to classify who survived or not (77.03% prediction accuracy).
 * Dealt with 3 types of Data cleaning problems through median/mode imputation and dropping data then dealt with outliers.
 * Engineered 2 new features by extracting name titles from name strings and combining 2 numerical features into a categorical one.
@@ -9,33 +8,29 @@
 
 
 ## **Code and resources used**
----------------------------
 **Python Version:** 3.9
 **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, collections, xgboost
 **Outliers detection:** https://www.kaggle.com/code/yassineghouzam/titanic-top-4-with-ensemble-modeling#2.2-Outlier-detection
 **Cross-Validate:** https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html
 **Plotting Learning Curve:** https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html
 
-## **Ultimate goal of the analysis**
 ---------------------------
+## **Ultimate goal of the analysis**
 - Build a machine learning model to classify who survived or not.
 
 ## **Bonus Quests on the way**
----------------------------
 + Did women and children have priority? (**Yes**)
 + What were the chances of families surviving? (**Yes, 3 members to be specific**)
 + Did the rich have higher chance of surviving? (**Yes**)
 
+---------------------------
 ## **Data**
---------------
 
 ### **Files:**
----------------------------
 * 'train.csv': labeled data
 * 'test.csv': prediction target
 
 ### **Features:**
---------------
 | Feature | Description | DType | Variable Type | Comments |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | `Survived` | Passenger survived or not | int64 | Categorical | 0 = No, 1 = Yes |
@@ -50,17 +45,14 @@
 | `Ticket` | Ticket code | object | Combined | - |
 
 ### **Engineered Features:**
---------------
 | Feature | Description | DType | Variable Type | Comments |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | `Prefix` | Title extracted from `Name` col mapped into 4 categories | object | Categorical | Mr, Mrs, Master, Noble/Dr/Religion/Military |
 | `FamilySize` | `Parch` + `SibSp` and mapped into 4 categories | object | Categorical | Alone, Small, Medium, Big |
 
 --------------
---------------
 
 ## **Descriptive Analysis**
---------------
 - **Data shape**
   1. `Name` feature could be useful later if we extract the Prefixes (titles).
   2. `PassengerId` feature wont be of any use.
@@ -87,9 +79,8 @@
 
 ![Heat Map](https://i.imgur.com/V8MziHn.png)
 
-
+---------------------------
 ## **Exploratory Data Analysis**
---------------
 - **Data Cleaning**
   1. Checked some distributions of the features with missing values.
   2. Decided to impute `Fare`,`Age` and `Embarked`.
@@ -132,9 +123,8 @@
 
 ![image](https://user-images.githubusercontent.com/88734429/195545754-3ec45846-486b-47ac-9e42-c2d5e9fd591f.png)
 
-
+---------------------------
 ## **Feature Engineering**
---------------
 1. **`Prefix` Feature**
    - Extracted `Prefix` from the title from the `Name` col.
    - Mapped `Prefix` into 4 categories (`Mr`,`Mrs`,`Master`,`Noble/Dr/Religion/Military`).
@@ -161,9 +151,8 @@
 3. **`Pclass`**
    - Converted dtype from int64 to str
 
-
+---------------------------
 ## **Preprocessing**
---------------
 - **Normalizing**
   1. Checked the numerical features `Age` and `Fare` distributions from earlier
   2. `Age` feature was normally distributed
@@ -184,9 +173,8 @@
   + Created 2 transformer objects (**OneHotEncoder**, **StandardScaler**)
   + Transformed the features of the 3 dataframes (**X_train**, **X_test**, **target_X**)
 
-
+---------------------------
 ## **Modeling**
---------------
 1. **Model baseline Evaluation**
    - Started things by creating a list of model names and objects then setup stratified KFolds for the cross validation.
    - Created a dataframe to store the results.
